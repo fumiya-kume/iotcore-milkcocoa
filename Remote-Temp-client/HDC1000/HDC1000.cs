@@ -54,7 +54,7 @@ namespace HDC1000
         /// Measurement HDC1000 sense 
         /// </summary>
         /// <returns>HDC1000 sense Value</returns>
-        public async Task<HDC1000Data> Measurement()                                    
+        public async Task<HDC1000Data> Measurement()
         {
             _device.Write(new byte[] { 0x00 });
             await Task.Delay(TimeSpan.FromSeconds(10));

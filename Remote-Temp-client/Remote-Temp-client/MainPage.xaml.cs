@@ -18,7 +18,7 @@ namespace Remote_Temp_client
         public HDC1000Data Hdc1000Data { get; set; }
 
         //Sense Measureament Interval is 5 Min
-        public DispatcherTimer Timer { get; set; } = new DispatcherTimer() {Interval = TimeSpan.FromSeconds(30)};
+        public DispatcherTimer Timer { get; set; } = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(30) };
 
         public MainPage()
         {
