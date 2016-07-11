@@ -29,5 +29,19 @@ namespace Remote_Temp_Host
             Temp_Value.Text = $"Temp: {(int)resultobject.Temp}°";
             Hum_Value.Text = $"Hum: {(int)resultobject.Hum}%";
         }
+
+        private void singleViewbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Temp_Value.Visibility = Visibility.Visible;
+            this.Hum_Value.Visibility = Visibility.Visible;
+            this.Humbagerview.IsPaneOpen = false;
+        }
+
+        private void GraphViewbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Temp_Value.Visibility = Visibility.Collapsed;
+            this.Hum_Value.Visibility = Visibility.Collapsed;
+            this.Humbagerview.IsPaneOpen = false;
+        }
     }
 }

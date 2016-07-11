@@ -1,7 +1,8 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
-    "Milkcocoa": "0.3.0"
+    "Milkcocoa": "0.3.0",
+    "WinRTXamlToolkit.UWP": "2.0.0"
   },
   "frameworks": {
     "uap10.0": {}
