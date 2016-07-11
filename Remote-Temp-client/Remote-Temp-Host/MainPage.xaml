@@ -12,13 +12,29 @@
                 <Grid/>
             </CommandBar.Content>
             <AppBarButton x:Name="RefreshValue" Icon="Refresh" Label="Refresh Value" Click="RefreshValue_Click"/>
+            <AppBarToggleButton x:Name="appBarToggleButton" Icon="Accept" Label="appbartogglebutton"/>
         </CommandBar>
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock x:Name="Temp_Value" FontSize="48">°</TextBlock>
-            <TextBlock x:Name="Hum_Value" FontSize="48">%</TextBlock>
-        </StackPanel>
+        <SplitView IsPaneOpen="{Binding IsChecked, ElementName=appBarToggleButton, Mode=TwoWay}">
+            <SplitView.Pane>
+                <StackPanel>
+                    <TextBlock>Single View</TextBlock>
+                    <TextBlock>Graph View</TextBlock>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock x:Name="Temp_Value" FontSize="48">°</TextBlock>
+                    <TextBlock x:Name="Hum_Value" FontSize="48">%</TextBlock>
+                </StackPanel>
+            </SplitView.Content>
+        </SplitView>
+        <ToggleButton x:Name="toggleButton" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets">
+            <ToggleButton.Content>
+                <FontIcon Glyph="&amp;#xE700"></FontIcon>
+            </ToggleButton.Content>
+        </ToggleButton>
     </Grid>
 </Page>
