@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Remote_Temp_Host"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.BottomAppBar>
@@ -24,10 +25,17 @@
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock x:Name="Temp_Value" FontSize="48">°</TextBlock>
-                    <TextBlock x:Name="Hum_Value" FontSize="48">%</TextBlock>
-                </StackPanel>
+                <Grid>
+                    <StackPanel x:Name="SingleViewHost" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock x:Name="Temp_Value" FontSize="48">°</TextBlock>
+                        <TextBlock x:Name="Hum_Value" FontSize="48">%</TextBlock>
+                    </StackPanel>
+                    <StackPanel Name="GraphViewHost">
+                        <Charting:Chart x:Name="GraphChart" >
+                            <Charting:LineSeries></Charting:LineSeries>
+                        </Charting:Chart>
+                    </StackPanel>
+                </Grid>
             </SplitView.Content>
         </SplitView>
         <ToggleButton x:Name="toggleButton" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets">
